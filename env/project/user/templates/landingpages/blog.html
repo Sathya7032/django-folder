@@ -1,0 +1,21 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block body %}
+  <main id="main">
+    <div class="container">
+      <h1 class="text-center">Blogs</h1>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for blogs in blogs %}
+        <div class="col">
+          <div class="card h-100">
+            <img src="{% static 'assets/img/file.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><a href="/blog/{{blogs.blog_id}}">Blogs-{{blogs.blog_id}}</a></h5> 
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </main>
+{% endblock body %}

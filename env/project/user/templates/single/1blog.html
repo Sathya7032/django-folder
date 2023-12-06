@@ -1,0 +1,22 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block body %}
+  <main id="main">
+    <div class="container mt-4">
+        <div class="card text-center">
+            <div class="card-header">
+              <h1>Blog</h1>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">{{blog.title}}</h2>
+              <p class="card-text">{{blog.blog_desc| safe}}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+            <div class="card-footer text-muted">
+              {{blog.blog_date}}
+            </div>
+          </div>
+    </div>
+    
+  </main>
+{% endblock body %}

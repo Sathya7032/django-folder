@@ -1,0 +1,94 @@
+{% extends "user/tutorials.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Tutorials</title>
+{% endblock title %}
+
+{% block body %}
+    <section style="background-color: #eee;">
+        <div class="container py-5">
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-12 col-xl-10">
+              <div class="card shadow-0 border rounded-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                        <img src="{% static 'assets/img/html.jpg' %}"
+                          class="w-100" />
+                        <a href="#!">
+                          <div class="hover-overlay">
+                            <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h5>HTML</h5>
+                      <p class="text-truncate mb-4 mb-md-0">
+                        HTML stands for HyperText Markup Language.<br>
+                        It is used to design web pages using a markup language.<br> 
+                        HTML is a combination of Hypertext and Markup language.<br>
+                        Hypertext defines the link between web pages.
+                      </p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                      <div class="d-flex flex-column mt-4">
+                        <button class="btn btn-primary btn-sm" type="button"><a href="html1/" style="color: aliceblue;">Tutorials</a></button>
+                        <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                          Take Tests
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mb-3">
+            <div class="col-md-12 col-xl-10">
+              <div class="card shadow-0 border rounded-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                      <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
+                          class="w-100" />
+                        <a href="#!">
+                          <div class="hover-overlay">
+                            <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                      <h5>CSS (Cascading Style Sheets)</h5>
+                      <p class="text-truncate mb-4 mb-md-0">
+                        CSS stands for Cascading Style Sheets.<br>
+                        CSS describes how HTML elements are to be <br>
+                        displayed on screen, paper, or in other media.<br>
+                        CSS saves a lot of work. It can control the layout<br>
+                        of multiple web pages all at once.<br>
+                        External stylesheets are stored in CSS files.
+                      </p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                      <div class="d-flex flex-column mt-4">
+                        <button class="btn btn-primary btn-sm" type="button">Tutorials</button>
+                        <button class="btn btn-outline-primary btn-sm mt-2" type="button">
+                          Take Tests
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+{% endblock body %}

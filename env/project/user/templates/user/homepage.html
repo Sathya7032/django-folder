@@ -1,0 +1,88 @@
+{% extends "user/base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Homepage</title>
+{% endblock title %}
+
+{% block body %}
+  <main id="main">
+    {% for message in messages %}
+  
+        <div
+          class="alert alert-{{message.tags}} alert-dismissible fade show"
+          role="alert"
+        >
+          <strong>{{message}} </strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          ></button>
+        </div>
+        {% endfor %}
+        
+    <center>
+        <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">welcome {{user.username}}  
+        </h1>
+        
+    </center>
+    <section id="about" class="about">
+      <div class="container">
+        <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-end">
+              <li class="page-item"><a class="page-link" href="{% url 'addBlog' %}">Add Blogs</a></li>
+              <li class="page-item"><a class="page-link" href="{% url 'addNote' %}">Add Note</a></li>
+              <li class="page-item"><a class="page-link" href="{% url 'addDiary' %}">Add Dairy</a></li>
+              <li class="page-item"><a class="page-link" href="{% url 'addProject' %}">Add Project</a></li>
+            </ul>
+          </nav>
+        </h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100">
+              <img src="{% static 'assets/img/projects.jpeg' %}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-center font-weight-bold">Projects</h5>
+                
+                <a href="{% url 'projects' %}" class="btn btn-dark">See Your Projects</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="{% static 'assets/img/diary.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-center font-weight-bold">Dairy</h5>
+                
+                <a href="{% url 'dairy' %}" class="btn btn-dark">See Your Dairy</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="{% static 'assets/img/blog.jpg' %}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-center font-weight-bold">Blogs</h5>
+                
+                <a href="{% url 'blogs' %}" class="btn btn-dark">See Your Blogs</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="{% static 'assets/img/notes.jpeg' %}" class="card-img-top" alt="...">
+              <div class="card-body text-center">
+                <h5 class="card-title text-center font-weight-bold">Notes</h5>
+                <a href="{% url 'note' %}" class="btn btn-dark">See Your Notes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+{% endblock body %}

@@ -1,0 +1,28 @@
+{% extends "user/tutorials.html" %}
+
+{% block title %}
+  <title>HTML</title>
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    {% for post in page_obj.object_list %}
+          {# note that the list of posts are in the page_obj.object_list not page_obj #}
+            <h1>{{post.post_title}}</h1>
+            <small>{{post.post_date}}</small>
+             
+<p>{{post.post_desc|safe}}</p>
+ 
+            <hr/>
+         {% endfor %}
+</div>
+<center>
+    {%if page_obj.has_previous %} {# whether the previous page exists #}
+        <a href="?page={{page_obj.previous_page_number}}">< Previous</a> {# link to the prev page #}
+    {% endif %}
+    <span> {{page_obj.number}} </span> {# the current page number #}
+    {%if page_obj.has_next %} {# whether the next page exists #}
+    <a href="?page={{page_obj.next_page_number}}"> Next ></a> {# link to the next page #}
+    {% endif %}
+</center>
+{% endblock body %}

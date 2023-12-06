@@ -1,0 +1,63 @@
+{% extends "user/tutorials.html" %}
+{% block title %}
+  <title>Blog Feed</title>
+{% endblock title %}
+{% block body %}
+   <!--Section: Newsfeed-->
+   <section>
+    <center>
+      {% for blogs in blogs %}
+      <div class="card m-2" style="max-width: 42rem">
+        <div class="card-body">
+          <!-- Data -->
+          <div class="d-flex mb-3">
+            <a href="">
+              <img
+                src="https://mdbcdn.b-cdn.net/img/new/avatars/18.webp"
+                class="border rounded-circle me-2"
+                alt="Avatar"
+                style="height: 40px"
+              />
+            </a>
+            <div>
+              <a href="#" class="text-dark mb-0">
+                <strong>{{blogs.blog_user}}</strong>
+              </a>
+              <a href="" class="text-muted d-block" style="margin-top: -6px">
+                <small>{{blogs.blog_date}}</small>
+              </a>
+            </div>
+          </div>
+          <!-- Description -->
+          <div>
+            <p>
+              {{blogs.blog_desc|safe}}
+            </p>
+          </div>
+        </div>
+        <!-- Media -->
+        <div
+          class="bg-image hover-overlay ripple rounded-0"
+          data-mdb-ripple-color="light"
+        >
+         
+          <a href="#!">
+            <div
+              class="mask"
+              style="background-color: rgba(251, 251, 251, 0.2)"
+            ></div>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+     
+    </center>
+  </section>
+  <!--Section: Newsfeed-->
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+{% endblock body %}
+

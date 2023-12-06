@@ -1,0 +1,22 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block body %}
+  <main id="main">
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header">
+              <h1>Note</h1>
+            </div>
+            <div class="card-body">
+              <h2 class="card-title">{{project.title}}</h2>
+              <p class="card-text">{{project.project_desc| safe}}</p>
+              <a href="{{project.project_links}}" class="btn btn-primary">Project Link</a>
+            </div>
+            <div class="card-footer text-muted">
+              {{note.note_date}}
+            </div>
+          </div>
+    </div>
+    
+  </main>
+{% endblock body %}

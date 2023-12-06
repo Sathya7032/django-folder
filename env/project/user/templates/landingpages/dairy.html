@@ -1,0 +1,24 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% block body %}
+  <main id="main">
+    <div class="container">
+        <h1 class="text-center">Dairy</h1>
+        
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {% for dairy in dairy  %}
+          <div class="col">
+            <div class="card h-100">
+              <img src="{% static 'assets/img/box.jpeg' %}" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title"><a href="/dairy/{{dairy.dairy_id}}">Dairy-{{dairy.date}}</a></h5>
+                
+              </div>
+            </div>
+          </div>
+          {% endfor %}  
+        </div>
+        
+    </div>
+  </main>
+{% endblock body %}

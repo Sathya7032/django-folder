@@ -1,0 +1,26 @@
+{% extends "user/base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block body %}
+<div class="container p-2">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-8">
+        <h2 class="text-white bg-dark text-center p-3">Add Dairy</h2>
+        
+        
+            <form method="POST">
+                {% csrf_token %}
+                {{form.media}}
+            {{ form.as_p}}
+            <div class="d-grid gap-2">
+                <button class="btn btn-dark" type="submit">Add Dairy</button>
+            </div>
+        
+    </form>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+  
+{% endblock body %}
